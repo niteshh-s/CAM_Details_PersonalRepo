@@ -1,0 +1,23 @@
+.filter-container{
+    border: none !important;
+    background-color: #000C9E;
+    height: 100%;
+}
+
+.filter-heading{
+    margin: 0px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-weight: lighter;
+}
+
+.filter{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+/* .mat-expansion-panel-content {
+    background-color: #000C9E !important;
+} */

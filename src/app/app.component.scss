@@ -1,0 +1,39 @@
+.top-toolbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #000C9E;
+    color: white;
+}
+
+.main-body{
+    display: flex;
+    height: 100vh;
+}
+
+.main_logo{
+    
+}
+
+.main-content{
+    padding: 10px;
+    width: 100%;
+}
+
+.related-info{
+    padding: 10px;
+}
+
+.side-nav{
+    display: flex;
+}
+
+mat-drawer{
+    width:40vh;
+}
+
+.example-container {
+    width: auto;
+    height: auto;
+  }
+

@@ -1,0 +1,27 @@
+.app-detail-heading{
+    font-weight: bolder;
+}
+
+.tableContainer{
+    display: table;
+    width: 100%;
+}
+
+.table-row{
+    display: table-row;
+}
+
+.table-column{
+    display: table-cell;
+    padding:10px;
+    border: 1px solid #768499;
+}
+
+.tblHeader {
+    background: #000C9E;
+    color: #fff;
+}
+
+.cam-details-table{
+    overflow: auto !important;
+}

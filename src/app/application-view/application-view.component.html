@@ -1,0 +1,65 @@
+<div class="main-content-header">
+    <div class="toggleView">
+        <mat-slide-toggle class="view-toggle mat-mdc-slide-toggle-checked" color="primary" (change)="onViewChange()"></mat-slide-toggle>
+    </div>
+
+    <div class="view-title">
+        <h2>{{pageTitle}}</h2>
+    </div>
+
+    <div class="download-view-content">
+        <mat-icon svgIcon="download" (click)="exportData()"></mat-icon>
+    </div>
+</div>
+
+<div *ngIf="pageView=='applicationView'">
+<mat-form-field style="width: 100%;">
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filter.." #input>
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- SSRID column -->
+    <ng-container matColumnDef="SSRID">
+        <th mat-header-cell *matHeaderCellDef>SSR ID</th>
+        <td mat-cell *matCellDef="let element">{{element.SSRID}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="ApplicationShortName">
+        <th mat-header-cell *matHeaderCellDef>Application</th>
+        <td mat-cell *matCellDef="let element">{{element.ApplicationShortName}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Tier">
+        <th mat-header-cell *matHeaderCellDef>Tier</th>
+        <td mat-cell *matCellDef="let element">{{element.SSRID}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="ApplicationState">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let element">{{element.ApplicationState}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="OrgUnit">
+        <th mat-header-cell *matHeaderCellDef>OrgUnit</th>
+        <td mat-cell *matCellDef="let element">{{element.OrgUnit}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Portfolio">
+        <th mat-header-cell *matHeaderCellDef>Portfolio</th>
+        <td mat-cell *matCellDef="let element">{{element.OrgUnit}}</td>
+    </ng-container>
+    
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row (click)="showApplicationDetails(row)" *matRowDef="let row; columns:displayedColumns;"></tr>
+
+    <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+    </tr>
+</table>
+
+</div>
+<div *ngIf="pageView=='CamDetailsView'">
+    <app-cam-details-view [exportCamDetailsData]="exportCamDetailsData"></app-cam-details-view>
+</div>

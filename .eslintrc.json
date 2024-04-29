@@ -1,0 +1,122 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "parserOptions": {
+        "project": [
+          "tsconfig.json",
+          "tsconfig.base.json",
+          "e2e/tsconfig.e2e.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "plugins": [],
+      "rules": {
+        "id-blacklist": "off",
+        "max-len": "off",
+        "no-invalid-this": "off",
+        "no-shadow": "off",
+        "no-underscore-dangle": "off",
+        "no-useless-constructor": "off",
+        "prefer-arrow/prefer-arrow-functions": "off",
+        "@angular-eslint/no-conflicting-lifecycle": "off",
+        "@angular-eslint/no-output-native": "off",
+        "@typescript-eslint/naming-convention": "off",
+        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/no-unused-expressions": "off",
+        "@typescript-eslint/unbound-method": "off",
+        "@typescript-eslint/member-ordering": "off",
+        "@angular-eslint/component-selector": [
+          "off",
+          {
+            "type": "kebab-case",
+            "prefix": "slb",
+            "style": true
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "off",
+          {
+            "type": "camelCase",
+            "prefix": "slb",
+            "style": true
+          }
+        ],
+        "@angular-eslint/no-forward-ref": "off",
+        "@angular-eslint/no-host-metadata-property": "off",
+        "@angular-eslint/no-output-on-prefix": "off",
+        "@angular-eslint/prefer-output-readonly": "off",
+        "@typescript-eslint/consistent-type-definitions": "off",
+        "@typescript-eslint/dot-notation": "off",
+        "@typescript-eslint/explicit-member-accessibility": [
+          "off",
+          {
+            "accessibility": "explicit"
+          }
+        ],
+        "@typescript-eslint/no-inferrable-types": "off",
+        "@typescript-eslint/no-this-alias": "off",
+        "@typescript-eslint/prefer-for-of": "off",
+        "@typescript-eslint/prefer-readonly": "off",
+        "arrow-parens": [
+          "off",
+          "always"
+        ],
+        "brace-style": [
+          "error",
+          "1tbs"
+        ],
+        "comma-dangle": [
+          "error",
+          {
+            "objects": "always-multiline",
+            "arrays": "always-multiline",
+            "functions": "never"
+          }
+        ],
+        "import/order": "off",
+        "linebreak-style": "off",
+        "new-parens": "off",
+        "newline-per-chained-call": "off",
+        "no-extra-semi": "off",
+        "no-irregular-whitespace": "off",
+        "no-redeclare": "off",
+        "no-return-await": "error",
+        "quote-props": "off",
+        "react/jsx-curly-spacing": "off",
+        "react/jsx-equals-spacing": "off",
+        "react/jsx-wrap-multilines": "off",
+        "space-before-function-paren": [
+          "error",
+          {
+            "anonymous": "always",
+            "named": "never",
+            "asyncArrow": "always"
+          }
+        ],
+        "space-in-parens": [
+          "off",
+          "never"
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ],
+      "rules": {}
+    }
+  ]
+}

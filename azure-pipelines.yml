@@ -1,0 +1,54 @@
+resources:
+- repo: self
+
+pool:
+  vmImage: 'ubuntu-latest' # or 'windows-latest'
+  name: Azure Pipelines
+  demands:
+    - npm
+    - node.js
+
+variables:
+- group: AppEngine
+
+steps:
+- task: Npm@1
+  displayName: 'npm install'
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: 'install'
+
+- task: Npm@1
+  displayName: 'Build'
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: 'run build'
+
+- task: Npm@1
+  displayName: 'Test'
+  inputs:
+    command: custom
+    verbose: false
+    customCommand: 'test'
+
+- task: CopyFiles@2
+  displayName: 'Prepare app artifacts'
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: |
+     dist/dls-boilerplate-material/**
+     dist/server/**
+     deploy/deploy.sh
+     demo-app.yaml
+     package.json
+     package-lock.json
+     .npmrc
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/boilerplate'
+
+- task: PublishPipelineArtifact@0
+  displayName: 'Publish App Artifact'
+  inputs:
+    artifactName: 'dls-boilerplate-material'
+    targetPath: '$(Build.ArtifactStagingDirectory)/boilerplate'

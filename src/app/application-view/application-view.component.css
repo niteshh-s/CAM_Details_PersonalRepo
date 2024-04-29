@@ -1,0 +1,23 @@
+table{
+    min-width:100%;
+}
+
+.view-toggle .mat-slide-toggle-thumb{
+    background: #106ff9 !important;
+}
+
+.view-toggle .mat-slide-toggle-bar{
+    background: #7fb1e8 !important;
+}
+
+.main-content-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    padding-bottom: 15px;
+}
+
+.toggleView, .download-view-content, .view-title{
+    display: flex;
+    align-items: center;
+}

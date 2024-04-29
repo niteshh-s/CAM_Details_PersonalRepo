@@ -1,0 +1,50 @@
+<div class="filter-container">
+<h3 class="filter-heading">Filters</h3>
+<mat-accordion multi="true">
+
+    <div class="filter application-filter">
+    <mat-expansion-panel class="mat-elevation-z0">
+        <mat-expansion-panel-header >Application</mat-expansion-panel-header>
+        <mat-form-field style="width: 100%; display: inline-flex;">
+            <input matInput placeholder="Search.." style="background-color: white;" [formControl]="applicationFilterControl">
+            <mat-icon svgIcon="search"></mat-icon>
+        </mat-form-field>
+    </mat-expansion-panel>
+    </div>
+
+    <div class="filter server-filter">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>Server Name</mat-expansion-panel-header>
+        <mat-form-field style="width: 100%; display: inline-flex;">
+            <input matInput placeholder="Search.." [formControl]="serverFilterControl">
+            <mat-icon svgIcon="search"></mat-icon>
+        </mat-form-field>
+    </mat-expansion-panel>
+    </div>
+
+    <div class="filter status-filter">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+              <label class="filter-lable">Status</label>
+            </mat-panel-title>
+        </mat-expansion-panel-header>  
+        <mat-selection-list #appStatus (selectionChange) = "applicationStatusSelected(appStatus.selectedOptions.selected)">
+            <mat-list-option *ngFor="let item of windowStatusOptions">
+                {{ item.viewText }}
+            </mat-list-option>
+        </mat-selection-list>
+    </mat-expansion-panel>
+    </div>
+
+
+    <!-- <mat-expansion-panel class="mat-elevation-z0">
+        <mat-expansion-panel-header>Filter 4</mat-expansion-panel-header>
+        <mat-form-field style="width: 100%; display: inline-flex;">
+            <input matInput placeholder="Search.." [formControl]="applicationFilter">
+            <mat-icon svgIcon="search"></mat-icon>
+        </mat-form-field>
+    </mat-expansion-panel> -->
+
+</mat-accordion>
+</div>

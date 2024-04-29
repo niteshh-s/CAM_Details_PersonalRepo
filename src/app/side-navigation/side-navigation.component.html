@@ -1,5 +1,6 @@
 <div class="filter-container">
-<h3 class="filter-heading">Filters</h3>
+<h2 class="filter-heading">Filters</h2>
+
 <mat-accordion multi="true">
 
     <div class="filter application-filter">
@@ -12,8 +13,10 @@
     </mat-expansion-panel>
     </div>
 
+    <mat-divider ></mat-divider>
+
     <div class="filter server-filter">
-    <mat-expansion-panel>
+    <mat-expansion-panel class="mat-elevation-z0">
         <mat-expansion-panel-header>Server Name</mat-expansion-panel-header>
         <mat-form-field style="width: 100%; display: inline-flex;">
             <input matInput placeholder="Search.." [formControl]="serverFilterControl">
@@ -22,12 +25,12 @@
     </mat-expansion-panel>
     </div>
 
+    <mat-divider ></mat-divider>
+
     <div class="filter status-filter">
-    <mat-expansion-panel>
+    <mat-expansion-panel class="mat-elevation-z0">
         <mat-expansion-panel-header>
-            <mat-panel-title>
-              <label class="filter-lable">Status</label>
-            </mat-panel-title>
+            Status
         </mat-expansion-panel-header>  
         <mat-selection-list #appStatus (selectionChange) = "applicationStatusSelected(appStatus.selectedOptions.selected)">
             <mat-list-option *ngFor="let item of windowStatusOptions">
@@ -36,6 +39,8 @@
         </mat-selection-list>
     </mat-expansion-panel>
     </div>
+
+    <mat-divider ></mat-divider>
 
 
     <!-- <mat-expansion-panel class="mat-elevation-z0">

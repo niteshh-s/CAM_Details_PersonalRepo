@@ -1,14 +1,14 @@
 .filter-container{
     border: none !important;
-    background-color: #000C9E;
+    /* background-color: #0012de; */
     height: 100%;
 }
 
 .filter-heading{
     margin: 0px;
     padding: 10px;
+    margin-bottom: 20px;
     text-align: center;
-    color: white;
     font-weight: lighter;
 }
 
@@ -21,3 +21,17 @@
 /* .mat-expansion-panel-content {
     background-color: #000C9E !important;
 } */
+
+mat-expansion-panel-header{
+    /* background-color: #0012de; */
+    /* color: white; */
+}
+
+html .mat-expansion-indicator, html .mat-expansion-indicator:after {
+    color: white;
+}
+
+mat-expansion-panel{
+    --mat-expansion-container-shape:0px;
+    box-shadow: 0px 0px 0px 0px;
+}

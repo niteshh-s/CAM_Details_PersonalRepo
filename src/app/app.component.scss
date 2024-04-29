@@ -2,8 +2,9 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    background-color: #000C9E;
+    background-color: #0012de;
     color: white;
+    // height: 65px;
 }
 
 .main-body{
@@ -12,7 +13,14 @@
 }
 
 .main_logo{
-    
+    padding-right: 80px;
+    padding-top: 10px;
+}
+
+.right-logo{
+    display: flex;
+    align-items: center;
+    padding-right: 40px;
 }
 
 .main-content{
@@ -35,5 +43,19 @@ mat-drawer{
 .example-container {
     width: auto;
     height: auto;
+  }
+
+  .slb-gif{
+    max-height: 70px;
+    max-width: 200px;
+    overflow: hidden;
+  }
+
+  .slb-logo-gif{
+    height: 200px;
+    position: relative;
+    width: 200px;
+    top: -60px;
+    left: 28px;
   }
 
